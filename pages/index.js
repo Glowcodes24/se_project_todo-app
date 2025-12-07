@@ -15,7 +15,6 @@ const handleEscape = (evt) => {
     const openedPopup = document.querySelector(".popup_visible");
     if (openedPopup) {
       closeModal(openedPopup);
-      newTodoValidator.resetValidation();
     }
   }
 };
@@ -46,7 +45,6 @@ addTodoButton.addEventListener("click", () => {
 });
 
 addTodoCloseBtn.addEventListener("click", () => {
-  newTodoValidator.resetValidation();
   closeModal(addTodoPopup);
 });
 
@@ -57,6 +55,7 @@ addTodoForm.addEventListener("submit", (evt) => {
 
   const date = new Date(dateInput);
   date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
+  newTodoValidator.resetValidation();
 
   const id = uuidv4();
   const values = { name, date, id };
@@ -66,7 +65,6 @@ addTodoForm.addEventListener("submit", (evt) => {
 
 initialTodos.forEach((item) => {
   renderTodo(item);
-  addTodoForm.reset();
 });
 
 const newTodoValidator = new FormValidator(validationConfig, addTodoForm);
