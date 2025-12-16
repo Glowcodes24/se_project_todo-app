@@ -4,10 +4,6 @@ class TodoCounter {
     this._completed = todos.filter((todo) => todo.completed).length;
     this._total = todos.length;
     this._updateText();
-
-    console.log(this._element);
-    console.log(this._completed);
-    console.log(this._total);
   }
 
   updateCompleted = (increment) => {
