@@ -26,4 +26,4 @@ class PopupWithForm extends Popup {
   }
 }
 
-export default PopupWithForms;
+export default PopupWithForm;
